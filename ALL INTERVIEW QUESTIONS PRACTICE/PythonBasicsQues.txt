@@ -1,0 +1,380 @@
+1)  What are the key features of  python?
+#.......Sir, Python is a simple and easy-to-read programming language. It is an interpreted language, so it runs code line by line. Python is dynamically typed, which means we don’t need to define variable types. It supports object-oriented programming, functional programming, and procedural programming. Python has automatic memory management, so we don’t need to handle memory manually. It works on different operating systems like Windows, macOS, and Linux. Python also has many built-in libraries that help in data science, web development, and automation.
+
+2)  What are keywords in python?
+#........Sir, keywords in Python are special reserved words that have a fixed meaning and cannot be used as variable names or function names. They are used to define the syntax and structure of Python. Examples of keywords are if, else, while, for, def, class, try, except, return, True, False. Python has a total of 33 keywords in Python 3. They help in writing control flow, loops, functions, and exception handling.
+
+3) What are the literals in Python?
+#........Sir, literals in Python are fixed values assigned to variables. They represent constant data. There are different types of literals:
+String Literals – Text inside quotes, like "Hello" or 'Python'.
+Numeric Literals – Numbers like 10, 3.14, or 5+3j (integer, float, complex).
+Boolean Literals – True and False, used for logical operations.
+None Literal – None, which represents no value or an empty variable.(special Literal)
+Literals are used to store data directly in variables.
+
+4) How can you concatenate two tuples?
+#......Sir, we can concatenate two tuples using + operator
+tup1= (1,2,"a")
+tup2=(3,4,5)
+print(tup1+tup2)
+
+5) What are functions in python?
+#......Sir, functions in Python are blocks of reusable code that perform a specific task. They help in reducing repetition and making code modular.
+We define a function using the def keyword.
+
+Example:
+def greet(name):  
+    return "Hello, " + name  
+print(greet("John"))  # Output: Hello, John
+
+There are two types of functions:
+Built-in functions – Like print(), len(), sum().
+User-defined functions – Functions created by the programmer.
+Functions increase code reusability and readability.
+
+6) How can you initialize a 5*5 Numpy Array with only zeros?
+#..... Sir in numpy we can create 5*5 array filled with zeros using numpy.zeros()
+import numpy as np
+arr=np.zeros((5,5))
+print(arr)
+
+7)What is Pandas?
+#.....Sir, Pandas is a Python library used for data manipulation and analysis. It provides two main data structures:
+Series – One-dimensional labeled array.
+DataFrame – Two-dimensional table like an Excel sheet.
+Example Use:
+Reading and writing CSV files.
+Filtering and cleaning data.
+Performing statistical analysis.
+
+8)What are DataFrames?
+#......Sir, a DataFrame is a two-dimensional data structure in Pandas, like a table with rows and columns. It is similar to an Excel sheet or SQL table.
+Syntax:
+import pandas as pd
+data={'Name':['Rahul','Rohit'], 'Age':[25,30]}
+df= pd.DataFrame(data)
+print(df)
+It allows data manipulation, filtering, and analysis easily.
+
+9)What is a Pandas Series?
+#.....Sir, a Pandas Series is a one-dimensional labeled array, similar to a column in Excel or a list with an index.
+Syntax:
+import pandas as pd
+data=[2,3,4,5]
+sr=pd.Series(data)
+print(sr)
+Each value has an index, making it easy to access and manipulate.
+
+10) What is the use of pandas groupby() functions?
+#.......Sir, the groupby() function in Pandas is used to group data based on a column and apply functions like sum, mean, count, etc.
+Syntax:
+import pandas as pd
+data={'Dept':['MCA','IT','MCA','IT'],'Salary':[3000,4000,5000,2000]}
+df=pd.DataFrame(data)
+res=df.groupby('Dept')['Salary'].sum()
+print(res)
+
+11) How To Create a DataFrame from Lists.
+#.......
+df=pd.DataFrame()
+marks=[34,56,78,90]
+subject=["OOPS","SQL","C++","JAVA"]
+df["subject"]=subject
+df["marks"]=marks
+print(df)
+
+lis=[["Mca",23],["IT",46],["CSE",56]]
+df1=pd.DataFrame(lis,columns=["Dept","Marks"])
+print(df1)
+
+12) How To Create a DataFrame from Dictionary.
+import pandas as pd
+data={"Name":["Rahul","Rohit","Sangram"],"Age":[23,12,24]}
+df2=pd.DataFrame(data)
+print(df2)
+
+13)How To Combines Data Frames using join() Functions
+d1={'ID': [1, 2, 3], 'Name': ['Amit', 'Neha', 'Raj']}
+d2={'ID': [1, 2, 3], 'Age': [23,24,25]}
+df1=pd.DataFrame(d1)
+df2=pd.DataFrame(d2)
+res=df1.set_index('ID').join(df2.set_index("ID"))
+print(res)
+
+14) Which Methods Works Best for vertical Stacking of DataFrames?
+d1={'ID': [1, 2, 3], 'Name': ['Amit', 'Neha', 'Raj']}
+d2={'ID': [3,4,5], 'Name': ["Real","Sarkar","Gaming"]}
+df1=pd.DataFrame(d1)
+df2=pd.DataFrame(d2)
+res=pd.concat([df1,df2],ignore_index=True)
+print(res)
+
+15)How to Merge Data Frames in Pandas
+d1={'ID': [1, 2, 3], 'Name': ['Amit', 'Neha', 'Raj']}
+d2={'ID': [1, 2, 4], 'Age': [23,24,25]}
+df1=pd.DataFrame(d1)
+df2=pd.DataFrame(d2)
+res=pd.merge(df1,df2, on="ID", how='inner')
+print(res)
+
+16)Given The Below DataFrame drop all rows having NaN.
+Sir, we can drop all rows having NaN using dropna() in Pandas.
+df = pd.DataFrame({'Col1': [1.0, 2.0, None], 'Col2': ['A', 'B', 'C']})  
+res=df.dropna()
+print(res)
+
+17)How To access the first Five and Last Five entries of a dataframe?
+Sir, we can access the first five and last five entries of a DataFrame using head() and tail() functions.
+df.head()
+df.tail()
+
+18) How to access data from a dataFrame using a value as index?
+First we have to set column as the index then use loc for retrival
+d1={'ID': [1, 2, 3], 'Name': ['Amit', 'Neha', 'Raj']}
+df1=pd.DataFrame(d1)
+print(df1)
+df1.set_index("ID", inplace=True)
+print(df1)
+print(df1.loc[2])
+
+19)How do you add single line and multiline comments in python.?
+#this is single line comments
+"""this 
+is multiline comment"""
+
+20)What is the most memory efficient way to add elements to a tuple?
+Sir We can not add element to a tuple because a tuple is a immutable data types.
+
+21)What is a Dictionary in Python?
+Sir, a dictionary in Python is an unordered collection of key-value pairs. It allows us to store and retrieve data efficiently using unique keys. Dictionaries are mutable, meaning we can change them after creation.
+student = {"name": "John", "age": 25, "course": "Python"}
+
+22)Find out The measures of central tendency for this numpy array : np.array([1,5,3,100,4,48])
+Sir, the measures of central tendency include mean, median, and mode.
+import numpy as np  
+from scipy import stats 
+
+arr = np.array([1, 5, 1, 100, 4, 48])
+mean=np.mean(arr)
+median=np.median(arr)
+mod=stats.mode(arr)
+mode=np.std(arr)
+print(mean," ",median," ",mod)
+
+23)What is the use of a classifier?
+Sir, a classifier is used in machine learning to categorize data into different classes. It helps in making predictions based on input data.
+
+For example, in email spam detection, a classifier analyzes emails and labels them as "spam" or "not spam" based on past data.
+
+24)How do you convert a string into lowercase using python.
+Sir, we can convert a string into lowercase using the .lower() method.
+text = "Hello WORLD"
+print(text.lower())  # Output: hello world
+
+25)How do get a list of all the keys in a dictionary?
+Sir, we can get all the keys in a dictionary using the .keys() method.
+my_dict = {"name": "John", "age": 25, "city": "New York"}
+print(my_dict.keys())  # Output: dict_keys(['name', 'age', 'city'])
+
+26)How can you capitalize the first letter of a string?
+Sir, we can use the capitalize() method. It makes the first letter uppercase and the rest lowercase.
+str="rahul Kumar"
+print(str.capitalize())
+
+27)How Can you insert an element at a given index in python?
+Sir, we can use the insert() method of a list. It adds an element at a specific index.
+lst=[1,2,3,4,5]
+lst.insert(3,5)
+print(lst)
+
+28)How will remove duplicate element from a list?
+Sir, we can use set() to remove duplicates from a list because a set stores only unique values.
+lst=[1,1,2,2,2,3,4,5]
+nwlst=list(set(lst))
+n=list(dict.fromkeys(lst))
+print(nwlst)
+
+29)What is recurssion?
+Sir, recursion is a process where a function calls itself to solve a problem in smaller parts. It keeps calling itself until it reaches a base condition that stops further calls. Recursion is mainly used in problems like tree traversal, factorial calculation, and searching algorithms.
+
+30)Explain Python List Comprehension.
+Sir, Python list comprehension is a short and efficient way to create lists using a single line of code. It helps in writing clean and readable code.
+ls=[x**2 for x in range(1,6)]
+print(ls)
+
+31)What is the use of bytes() function.
+Sir, the bytes() function in Python is used to create immutable byte objects, which store a sequence of bytes. It is useful for handling binary data like images, files, and network communication.
+
+32)What are the different types of operator in python?
+Sir, Python has different types of operators:
+Arithmetic Operators → +, -, *, /, //, %, **
+Comparison Operators → ==, !=, >, <, >=, <=
+Logical Operators → and, or, not
+Bitwise Operators → &, |, ^, ~, <<, >>
+Assignment Operators → =, +=, -=, *=, /=, %=, **=, //=, &=, |=, ^=, <<=, >>=
+Identity Operators → is, is not
+Membership Operators → in, not in
+
+33)What is with statement used in python.
+Sir, the with statement is used to handle exception, like opening a file. It makes sure the file closes automatically after use.
+
+34)What is a Map() function in Python?
+The map() function in Python is used to apply a function to each item in an iterable (like a list or tuple) and return a new iterable (map object).
+map(function, iterable)
+function → A function to apply to each element.
+iterable → The sequence (list, tuple, etc.) to process.
+
+num=[1,2,3,4]
+lst=list(map(lambda x:x**2, num))
+print(lst)
+
+35)What is __init__ in python?
+The __init__ method in Python is a special method (constructor) that is automatically called when an object of a class is created. It is used to initialize object attributes.
+class example:
+    def __init__(self,name):
+        self.name=name
+
+obj=example("Jhon")
+print(obj.name)
+
+36)What are the tools present to perform static analysis?
+The two static analysis tools used to find bug in python Pychecker and pylint.
+Pychecker detects buf from source code and warns about its style and Complexity.
+PyLint – Checks Python code for errors, coding standards, and style violations.
+
+
+37)What is the difference between a tuple and a dictionary.
+Sir, a tuple and a dictionary are both data structures in Python, but they have key differences:
+
+Definition:
+A tuple is an ordered collection of elements.
+A dictionary is an unordered collection of key-value pairs.
+Mutability:
+Tuples are immutable, meaning their elements cannot be changed after creation.
+Dictionaries are mutable, so we can add, remove, or modify elements.
+Accessing Elements:
+In a tuple, we access elements using an index (tup[0]).
+In a dictionary, we access values using keys (dict["name"]).
+Duplicates:
+Tuples allow duplicate values.
+Dictionaries do not allow duplicate keys, but values can be repeated.
+
+38)what is pass in python?
+In Python, pass is a placeholder statement that does nothing when executed. It is used in situations where a statement is syntactically required but no action is needed at that moment.
+def future_function():
+    pass  # Placeholder for future code
+
+39)How can an object copied in python?
+In Python, objects can be copied using the copy module. There are two types of copies:
+
+1. Shallow Copy (copy.copy())
+Creates a new object but does not copy nested objects; they are referenced.
+Changes in nested objects affect both original and copied objects.
+
+import copy
+original_list = [1, [2, 3], 4]
+shallow_copy = copy.copy(original_list)
+shallow_copy[1][0] = 99  # Modifying nested list
+print(original_list)  # Output: [1, [99, 3], 4] (Nested list affected)
+
+2. Deep Copy (copy.deepcopy())
+Recursively copies all objects, including nested ones.
+Changes in nested objects do not affect the original.
+
+deep_copy = copy.deepcopy(original_list)
+deep_copy[1][0] = 100  # Modifying nested list
+print(original_list)  # Output: [1, [99, 3], 4] (Original remains unchanged)
+
+40) How can a number converted to a string?
+We can convert a number to a string in Python using the str() function
+num = 123
+str_num = str(num)
+print(str_num)  # Output: '123'
+print(type(str_num))  # Output: <class 'str'>
+
+
+41)What are modules and package in python?
+
+Module:
+A module is a single Python file (.py) that contains functions, classes, or variables.
+It helps organize code and promotes reusability.
+You can import a module using import module_name.
+
+Example:
+# mymodule.py
+def greet():
+    return "Hello, World!"
+# main.py
+import mymodule
+print(mymodule.greet())  # Output: Hello, World!
+Package:
+A package is a collection of multiple modules stored in a directory.
+It contains an __init__.py file (optional in Python 3+) to mark it as a package.
+You can import modules from a package using from package_name import module_name.
+
+Example:
+mypackage/
+├── __init__.py
+├── module1.py
+├── module2.py
+
+# module1.py
+def say_hello():
+    return "Hello from Module 1!"
+
+# main.py
+from mypackage import module1
+print(module1.say_hello())  # Output: Hello from Module 1!
+
+42)What is the difference between numpy and scipy.
+Sir, NumPy is mainly used for working with arrays and basic mathematical operations, while SciPy is built on top of NumPy and provides advanced scientific and engineering functions.
+
+NumPy is good for creating and handling arrays, doing matrix operations, and performing basic math. SciPy, on the other hand, is used for more complex tasks like optimization, signal processing, and integration.
+
+For example, in NumPy, I can create an array and do matrix multiplication, but if I need to find the determinant of a matrix, I would use SciPy.
+
+43)What does the len() function do?
+Sir, the len() function in Python is used to find the number of elements in a sequence like a list, string, tuple, or dictionary.
+
+44)Define encapsulation in Python
+Sir, encapsulation in Python is a concept of hiding data and restricting direct access to it. It is done using private and protected variables in a class.
+
+45)What is the use of type() function in python?
+Sir, the type() function in Python is used to check the data type of a variable or object.
+x = 10
+print(type(x)) 
+
+46)What is the split() function used in python?
+Sir, the split() function in Python is used to break a string into a list of words based on a specified separator.
+text="Rahul Kumar Parida"
+words=text.split()
+print(words)
+
+47)What is docstring in python?
+Sir, a docstring in Python is a multi-line string used to document a function, class, or module. It helps explain what the code does.
+def add(a,b):
+    """This is sum"""
+    return a+b
+print(add.__doc__)
+
+48)What is the use of lambda function in python.
+Sir, a lambda function in Python is a small anonymous function that can have any number of arguments but only one expression. It is used when we need a short function for a short period.
+add = lambda a, b: a + b  
+print(add(3, 5)) 
+
+49)how do you find the factorial of a number using recursion.
+def factorial(n):
+    if n == 0 or n == 1:  # Base case
+        return 1
+    else:
+        return n * factorial(n - 1)  # Recursive call
+
+print(factorial(5))
+
+50)can you denote the working of the bool function with example.
+Yes, sir. The bool() function in Python is used to convert a value into a Boolean (True or False).
+So, bool() helps in checking whether a value exists or not.
+Working of bool() Function:
+Returns False for empty values (0, None, '', [], {}, set(), False).
+Returns True for non-empty values (1, "hello", [1,2,3], {5}, True).
+

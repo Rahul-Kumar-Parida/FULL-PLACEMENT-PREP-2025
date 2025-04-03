@@ -1,0 +1,158 @@
+1) What is Data structure?
+#....Sir, a data structure is a way of storing and organizing data so that it can be used efficiently. It helps in performing operations like searching, sorting, and modifying data easily.
+There are two types of data structures:
+Linear Data Structures – Data is arranged in a sequence (Example: Array, Linked List, Stack, Queue).
+Non-Linear Data Structures – Data is arranged in a hierarchical way (Example: Tree, Graph, Hash Table).
+
+2)What is the difference between file structure and data structure?
+# ...Sir, the difference is:
+Data Structure – It organizes and manages data in memory (RAM) for quick access and processing. Examples: Array, Linked List, Stack, Queue, Tree, Graph.
+File Structure – It organizes and stores data permanently in storage (HDD, SSD, etc.) for long-term use. Examples: Text files, CSV, JSON, Databases.
+Simply, data structure is for fast access in memory, while file structure is for permanent storage on disk.
+
+3) What is Linked List?
+Sir, a Linked List is a linear data structure where elements are stored in nodes, and each node contains data and a pointer to the next node.
+
+linked lists don’t store elements in continuous memory and can grow or shrink dynamically.
+Types of Linked Lists:
+Singly Linked List – Each node points to the next node.
+Doubly Linked List – Each node points to both next and previous nodes.
+Circular Linked List – Last node connects back to the first node.
+Linked lists are useful when we need efficient insertion and deletion but are slower for searching than arrays.
+
+4)Where are data structure Primarily used?
+#.......Sir, data structures are primarily used in:
+Databases – For fast data storage and retrieval.
+Operating Systems – For process and memory management.
+Networking – For routing and shortest path algorithms.
+AI & Machine Learning – For handling large datasets.
+Web Development – For caching and backend processing.
+Cybersecurity – For encryption and cryptographic algorithms.
+
+5)What are the types of searching used in data structure?
+#......There are mainly 2 types of searching
+1)Leaner Search: in linear search we search an element in an given array by the traversing the array from the starting to till the target element is not found.
+2)Binary search: It is a divide and conquer searching technique, we have to arrange the array in a particular order before Binary Search Operation.
+
+6)How does a binary search work?
+#....Sir, Binary Search works by dividing a sorted list into halves and checking the middle element:
+Find the middle element of the list.
+If it matches the target, return its position.
+If the target is smaller, search in the left half.
+If the target is larger, search in the right half.
+Repeat steps until the element is found .
+Time Complexity: O(log N)
+
+7)How are individual elements accessed in an array?
+#.....Sir, individual elements in an array are accessed using their index.
+Syntax (in Python): array[index]
+arr = [10, 20, 30, 40]
+print(arr[2])  # Output: 30
+Indexing starts from 0 (i.e., the first element is at index 0).
+Access time: O(1) (Direct access).
+
+8) What is queue in data structure?
+#.....Sir, a Queue is a linear data structure that follows the FIFO (First In, First Out) principle.
+Where insertion and deletion takes place on opposite end.
+Insertion end is called REAR,(enqueue)
+deletion end is called front.(dequeue)
+
+9)What is a Binary Tree?
+Sir, a Binary Tree is a hierarchical data structure where each node has at most two children:
+Left Child
+Right Child
+Example: A family tree where each parent has at most two children.
+
+10)What is the meaning of Stack?
+#...Stack Is a Linear Collection of data item that follows LIFO operations, Where insertion and deletion takes place on one one end called top of the stack,
+we can perform push and pop operation,(Push means Insertions and pop means deletion).
+
+11)What is the working of LIFO?
+Sir, LIFO stands for "Last In, First Out." It means the last element added is the removed first. A stack follows LIFO, just like a pile of plates—when we add a plate on top, we remove the top one first.
+
+12)What are multidimentional Arrays
+Sir, multidimensional arrays are arrays that have more than one row and column. It means an array inside another array. For example, a 2D array looks like a table with rows and columns we can say it matrix.
+
+13)Are linked list linear or non-linear Data Structures?
+Sir, a linked list is considered a linear data structure because elements are stored sequentially using pointers. However, it can be seen as non-linear when used for advanced data structures like graphs and trees.
+
+14)What is Binary Search Tree?
+Sir, a Binary Search Tree (BST) is a tree where each node has at most two children.  The left subtree contains values are smaller than the root node, and the right subtree contains values are greater than the root node. This structure helps in efficient searching, inserting, and deleting.
+
+15)What is the meaning of FIFO?
+Sir, FIFO stands for First In, First Out. It means the first element added is the removed first, like a queue.
+
+Example:
+Think of a line at a ticket counter. The person who comes first and gets ticket first, and the last person waits until their turn.
+
+16)What is the difference between void and null in data structures?
+Sir, void means "nothing" or "no specific data type." It is used in function return types.
+Null means "empty" or "no value." It is used for pointers or references that do not point to any valid memory location.
+
+17)What is dynamic memory management?
+Sir, dynamic memory management is the process of allocating and deallocating memory during the execution of a program. But in static memory allocation, where memory size is fixed at compile-time.
+
+we can use for allocating memory like malloc, calloc, realloc, and new keywords and for deallocating memory we can use free , delete keywords. why , because Avoid memory wastage , prevents memory leak.also efficient handling for large or unknown data sizes during program execution.
+
+18)What are push and pop operations in data structure?
+Sir, push and pop are operations used in stack data structure, which follows the LIFO (Last In, First Out) principle.
+
+Push Operation:
+It adds an element to the top of the stack.
+If the stack is full, it results in stack overflow.
+
+Pop Operation:
+It removes the top element from the stack.
+If the stack is empty, it results in stack underflow.
+
+19)How is a variable stored in memory  when using data structures?
+Sir, when a variable is stored in memory using data structures, it is stored in RAM (Random Access Memory) with a specific memory address. 
+
+Primitive Data Types (int, float, char, etc.)
+Stored in stack memory (fixed size, fast access).
+Example: int a = 10; → Stored directly in stack with an address.
+Dynamic Data Structures (Arrays, Linked Lists, Trees, etc.)
+Use heap memory (allocated dynamically).
+Example: int* ptr = (int*)malloc(sizeof(int)); → Memory allocated in the heap.
+Pointers & References
+Store memory addresses of variables.
+Example: int* p = &a; → p holds the address of a.
+Arrays
+Stored in contiguous memory locations.
+Example: arr[0], arr[1] are stored next to each other.
+Linked Lists & Trees
+Use nodes stored randomly in heap memory.
+Each node contains data + pointer to next node.
+
+20) What is merge Sort?
+Sir, Merge Sort is a divide and conquer sorting algorithm. It splits the array into two halves, sorts them separately, and then merges them back in sorted order.
+Steps:
+Divide: Split the array into two halves until each subarray has one element.
+Conquer: Recursively sort each half.
+Merge: Combine two sorted halves into one sorted array.
+Time Complexity:
+Best, Worst, and Average Case: O(n log n)
+
+21)why should heap be used over a stack?
+Sir, Heap should be used over Stack when we need dynamic memory allocation. In the stack, memory is allocated and deallocated automatically in a LIFO manner, but in the heap, we can allocate memory as needed and free it when it's no longer required. The heap also provides more memory space compared to the stack, making it useful for storing large objects. Another advantage is that heap memory persists beyond function calls, while stack memory is cleared once the function exits. This makes the heap more flexible for managing complex data structures like linked lists and tree
+
+22)what is Data abstraction?
+Sir, Data Abstraction means hiding the internal details of how data is stored and managed and it is showing only the necessary detyails. It helps in reducing complexity and improves code readability. For example, in OOP, a class can have private variables that users cannot access directly, but they can interact with the data using public methods. This ensures security and better control over data.
+
+23)What is the meaning of postfix expressions?
+Sir, Postfix expression is a way of writing mathematical expressions where the operator comes after the operands, instead of between them. It is also called Reverse Polish Notation (RPN). This form does not need parentheses to indicate order. For example, "3 4 +" means 3 + 4, and "5 2 * 8 +" means (5 * 2) + 8 = 18. It is mainly used in stack-based calculations and expression evaluation.
+
+24)What is the working of a selection sort?
+Sir, Selection Sort works by finding the smallest number in the list and swapping it with the first number. Then, it finds the next smallest and swaps it with the second number. This continues until the whole list is sorted.
+
+25)What are signed number in data structures?
+Sir, signed numbers are numbers that have a plus (+) or minus (-) sign to show if they are positive or negative.
+
+For example:
++5 (positive number)
+-3 (negative number)
+Computers store signed numbers using two's complement in memory.
+
+
+
+

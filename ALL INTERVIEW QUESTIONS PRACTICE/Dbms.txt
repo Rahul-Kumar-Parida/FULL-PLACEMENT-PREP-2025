@@ -1,0 +1,206 @@
+1)What is Sql, why is it used?
+🍀Sir, SQL stands for Structured Query Language. It’s a language used to manage and manipulate data in relational databases. We use it to perform tasks like inserting, updating, deleting, and retrieving data, and it helps us organize and analyze data efficiently for things like reports or business insights."
+
+2)What is difference between Sql and No sql?
+🍀Sir, SQL is Structured Query Language used for relational databases with a fixed schema, where data is stored in tables with rows and columns, like MySQL. NoSQL is for non-relational databases with a flexible schema, where data can be stored in formats like key-value pairs, documents, or graphs, like MongoDB. SQL is best for structured data and complex queries, while NoSQL is better for unstructured data and scalability."
+
+3)Explain ACID Properties in the context of SQL databases?
+🍀Sir, ACID properties are rules that helps reliable transactions in SQL databases. A stands for Atomicity, meaning all parts of a transaction happen together or none do—like if we transfer money, both debit and credit occur, or nothing happens. C is Consistency, ensuring the database stays valid and follows all rules after a transaction. I is Isolation, meaning transactions don’t interfere with each other; one finishes before another starts. D is Durability, meaning once a transaction is done, it’s saved permanently.
+
+4) What is Primary Key and Wht it is Important?
+🍀Sir, a Primary Key is a unique identifier for each record in a table, like a roll number for a student. It can’t have duplicate or null values. It’s important because it ensures every record is unique, helps in fast data retrieval, and maintains data integrity by linking tables in a database.
+
+5)What is foreign Key and How does it relate to a primary key?
+🍀Sir, a Foreign Key is a column in one table that refers to the Primary Key of another table. It establish the relationship between two tables and maintain referential integirty,means It prevents invalid data entries and keeps relationships between tables correct.
+
+For example, in an Orders table, Customer_ID can be a Foreign Key referencing the Customer_ID (Primary Key) in the Customers table. This ensures that every order is linked to a valid customer.
+
+6)Define Normalizations and its benifits?
+🍀Sir, Normalization is the process of organizing data in a database to reduce redundancy and improve data integrity. It involves dividing large tables into smaller related tables and defining relationships between them.
+
+Benefits of Normalization:
+Removes Data Redundancy – Avoids duplicate data.
+Improves Data Integrity – Ensures data consistency.
+Efficient Storage – Reduces unnecessary data storage.
+Easy Updates – Changes in data require modification in fewer places.
+Better Query Performance – Optimizes data retrieval.
+
+7)Explain Denormalization and when it might be useful?
+🍀Sir, Denormalization is the process of combining tables to reduce joins and improve query performance. It involves adding redundant data to speed up read operations.
+
+When is Denormalization Useful?
+Faster Read Queries – Reduces the need for complex joins.
+Optimized Reporting – Useful in data warehouses and analytics.
+Reduced Query Complexity – Simplifies fetching data.
+
+8)What is the difference between inner join ,left join and right join?
+🍀Sir, the difference is:
+
+INNER JOIN: Returns only matching records from both tables.
+LEFT JOIN: Returns all records from the left table and matching records from the right table. If no match, it shows NULL.
+RIGHT JOIN: Returns all records from the right table and matching records from the left table. If no match, it shows NULL.
+
+9)What is a self join? and when would you use it?
+🍀Sir, SELF JOIN is when a table is joined with itself. It is used when we need to compare rows within the same table.
+
+Example use case: Finding employees who have the same manager in an employee table.
+
+10)What is a subquery and why it is different from a join?
+🍀Sir, a subquery is a query inside another query, used to get data for the main query. It runs first and passes results to the outer query.
+
+Difference from JOIN:
+Subquery returns a single value or a set of values and is used inside WHERE, SELECT, or FROM.
+JOIN combines data from multiple tables in a single result set
+
+11)Explain Difference between Union and union all?
+Sir, UNION and UNION ALL are used to combine results from two queries.
+UNION removes duplicate rows from the result.
+UNION ALL keeps all rows, including duplicates.
+syntax:
+SELECT name FROM students1  
+UNION  
+SELECT name FROM students2;  -- Removes duplicates
+
+SELECT name FROM students1  
+UNION ALL  
+SELECT name FROM students2;  -- Keeps duplicates
+
+
+12)How does SQL injection attack work, and how can you prevent it.
+Sir, SQL Injection happens when attackers insert malicious SQL code into input fields to manipulate the database. It can be used to access, modify, or delete data.
+If a login query is:
+SELECT * FROM users WHERE username = 'admin' AND password = '1234';
+An attacker can input:
+' OR '1'='1'
+This changes the query to:
+SELECT * FROM users WHERE username = '' OR '1'='1' AND password = '1234';
+Since '1'='1' is always true, the attacker gains access.
+for prevent:
+used parametrized queries,implement input validation and sanitization
+
+13)What is the difference between Group by and Having Clause?
+Sir, GROUP BY is used to group rows based on a column, and HAVING is used to filter the grouped results.
+
+14)What is a correlated Subquery and when would you use one?
+Sir, a correlated subquery is a subquery that depends on the outer query for each row. It is executed once per row of the outer query.
+ex:
+SELECT e1.name, e1.salary, e1.department  
+FROM employees e1  
+WHERE e1.salary > (  
+    SELECT AVG(e2.salary)  
+    FROM employees e2  
+    WHERE e1.department = e2.department  
+);
+The inner query calculates the average salary per department for each employee.
+The outer query checks if the employee's salary is greater than their department’s average salary.
+
+15)Explain Difference Between a stored Procedureand a Function?
+Sir, a stored procedure is used to perform actions like inserting, updating, or deleting data. It can return multiple values using output parameters and supports transactions like COMMIT and ROLLBACK. But it cannot be used inside a SELECT statement.
+
+A function is used to return a single value or a table. It cannot modify data in the database and is mostly used for calculations. Unlike stored procedures, functions can be used inside SELECT statements.
+
+So, if I need to modify data, I'll use a stored procedure, and if I need to return a value inside a query, I'll use a function.
+
+16)How Do you Optimize a Slow Perform Sql Query?
+Sir, to optimize a slow SQL query:
+Use Indexes – Helps in faster data retrieval.
+Avoid SELECT * – Fetch only required columns.
+Use Efficient Joins – Prefer INNER JOIN over CROSS JOIN when possible.
+Filter Data Early – Use WHERE clause to reduce data load.
+Check Execution Plan – Identify bottlenecks in query performance.
+Optimize Table Structure – Normalize data and use appropriate data types.
+
+17)What is an index and why it is important in a database.
+Sir, an index is a database object that speeds up data retrieval. It works like a book index, allowing the database to find records faster without scanning the entire table. Indexes improve query performance, especially for searching, filtering, and sorting operations.
+
+18)What is Clustered index and Non clustered index?
+Sir, a clustered index sorts and stores the data physically in the table based on the index key. Each table can have only one clustered index because data can be sorted in one way.
+
+A non-clustered index stores the index separately from the actual data. It contains a pointer to the data location, allowing multiple non-clustered indexes on a single table.
+
+Clustered is faster for retrieving sorted data, while non-clustered is better for searching specific values.
+
+19)Describe the difference between candidate key , super key and primary key?
+Sir, a super key is a set of one or more columns that can uniquely identify a row in a table. It may have extra columns that are not necessary for uniqueness.
+
+A candidate key is a minimal super key, meaning it has no unnecessary columns. A table can have multiple candidate keys.
+
+A primary key is one chosen candidate key that uniquely identifies each row and cannot have NULL values.
+
+20)What is trigger in sql and how is it used?
+Sir, a trigger in SQL is a special kind of stored procedure that automatically runs when a specific event happens in a table, like INSERT, UPDATE, or DELETE. It is used to maintain data integrity, enforce business rules, or log changes in the database.
+
+21)Explain The Concept of transaction?
+Sir, a transaction in SQL is a sequence of operations performed as a single unit of work. It ensures ACID properties (Atomicity, Consistency, Isolation, Durability), meaning either all operations succeed, or none of them take effect. Transactions are used to maintain data integrity in databases.
+
+22)What is the difference between a unique constraint and primary constraint?
+Sir, a Primary Key ensures that a column has unique values and cannot have NULLs. A Unique Constraint also ensures uniqueness, but it allows NULL values. A table can have only one Primary Key, but multiple Unique Constraints.
+
+23)How to handel null values in SQL
+Sir, we can handle NULL values in SQL using:
+IS NULL / IS NOT NULL – To check for NULL values.
+COALESCE() – Replaces NULL with a default value.
+IFNULL() – Similar to COALESCE but for two values.
+NULLIF() – Returns NULL if two values are equal.
+CASE Statement – Handles NULL conditions in queries.
+
+24)What is the Propose of Case Statement?
+🍀Sir, the CASE statement in SQL is used for conditional logic. It works like an IF-ELSE statement and helps return different values based on conditions. It is mainly used in SELECT, WHERE, ORDER BY, etc., to handle conditional results.
+
+25)Explain The Concept Of View In SQl?
+🍀Sir, a View in SQL is like a virtual table. It shows data from one or more tables but does not store it.  Views help in simplifying complex queries, enhancing security by restricting access to specific columns, and improving readability..
+
+26)How does the exist clause works and when would you use it?
+Sir, the EXISTS clause is used in SQL to check if a subquery returns any rows. If the subquery returns at least one row, it returns TRUE; otherwise, it returns FALSE.
+When to Use:
+To check if related data exists in another table.
+To improve query performance compared to IN in large datasets.
+To validate conditions without needing to fetch actual data.
+
+27)What is the purpose of the SQL count() Function?
+Sir, the COUNT() function in SQL is used to count the number of rows in a table that match a specific condition.
+SELECT COUNT(*) FROM Customers;
+
+28)What are Ctes and How they are used?
+Sir, CTE (Common Table Expression) is a temporary result set that we can reference within a SELECT, INSERT, UPDATE, or DELETE statement.
+Usage:
+CTEs make queries more readable and allow recursive queries.
+Example:
+Find employees with a salary above 50000:
+WITH HighSalary AS (
+    SELECT name, salary FROM Employees WHERE salary > 50000
+)
+SELECT * FROM HighSalary;
+When to Use CTEs?
+Simplify complex queries by breaking them into smaller parts.
+Use recursion for hierarchical data like employee-manager relationships.
+Improve readability compared to subqueries.
+
+29)How do You Perform Data Paging in SQL
+Sir, data paging in SQL is done using the LIMIT and OFFSET or ROW_NUMBER() function.
+Using LIMIT and OFFSET (MySQL, PostgreSQL, etc.)
+SELECT * FROM Employees  
+ORDER BY id  
+LIMIT 10 OFFSET 20;  -- Skips first 20 records, shows next 10
+
+30)Explain THe Concept Of SQL cursors?
+Sir, an SQL cursor is used to retrieve and process rows one by one from a result set instead of all at once.
+
+31)What is the purpose of SQL Truncate statement?
+Sir, the TRUNCATE statement in SQL is used to quickly delete all records from a table while keeping its structure intact.
+TRUNCATE TABLE Employees;
+
+32)How can you prevent and handle deadlock in database?
+Sir, deadlocks happen when two or more transactions wait for each other to release a resource. To prevent and handle deadlocks,
+
+33)What is the difference between left outer join and Right outer join?
+Sir, the difference between LEFT OUTER JOIN and RIGHT OUTER JOIN is:
+
+LEFT OUTER JOIN: Returns all records from the left table and only matching records from the right table. If there is no match, NULL is returned for the right table's columns.
+
+RIGHT OUTER JOIN: Returns all records from the right table and only matching records from the left table. If there is no match, NULL is returned for the left table's columns.
+
+34)purpose of the SQL ROLLBACK statement
+ Yes, sir! The ROLLBACK statement is used to undo changes in a transaction if something goes wrong. It helps in restoring the database to its last committed state.
+
+For example, if I start a transaction and update some records, but then realize there is a mistake, I can use ROLLBACK to cancel those changes before they are saved permanently.
